@@ -1,36 +1,256 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="auto">
 <head>
-  <meta charset="UTF-8">
-  <title>Gopinath Annadurai - Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gopinath Annadurai</title>
+  <meta name="description" content="Portfolio & CV of Gopinath Annadurai — Doctoral Candidate in Public Policy (IIM Bangalore)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; max-width: 800px; }
-    h1 { color: darkblue; }
-    a { color: teal; text-decoration: none; }
-    .section { margin-bottom: 2rem; }
+    :root{
+      --bg:#ffffff;--fg:#111;--muted:#5f6368;--line:#eaeaea;--accent:#2b59ff;--card:#fafafa;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{--bg:#0e1116;--fg:#f1f5f9;--muted:#a7b0bd;--line:#1e293b;--accent:#8ab4ff;--card:#111826}
+    }
+    [data-theme="light"]{--bg:#ffffff;--fg:#111;--muted:#5f6368;--line:#eaeaea;--accent:#2b59ff;--card:#fafafa}
+    [data-theme="dark"]{--bg:#0e1116;--fg:#f1f5f9;--muted:#a7b0bd;--line:#1e293b;--accent:#8ab4ff;--card:#111826}
+
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.75}
+    .container{max-width:860px;margin:0 auto;padding:24px}
+
+    /* Top nav like raisasherif.com */
+    .top{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:50}
+    .top-inner{display:flex;gap:16px;align-items:center;justify-content:space-between;max-width:860px;margin:0 auto;padding:12px 24px}
+    .brand{font-weight:700}
+    .nav{display:flex;gap:16px;flex-wrap:wrap}
+    .nav a{color:inherit;text-decoration:none}
+    .nav a:hover{text-decoration:underline}
+
+    /* Toggle */
+    .toggle{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+    .seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+    .seg button{background:none;border:0;padding:6px 10px;color:inherit;cursor:pointer}
+    .seg button.active{background:var(--card)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:100%;gap:16px;align-items:center;margin-top:20px}
+    .hero h1{font-family:"Source Serif 4",Georgia,serif;font-size:40px;line-height:1.15;margin:0}
+    .subtitle{color:var(--muted);margin-top:4px}
+    .headshot{width:120px;height:120px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}
+
+    /* Sections */
+    section{padding:28px 0;border-bottom:1px solid var(--line)}
+    section:last-of-type{border-bottom:none}
+    h2{font-family:"Source Serif 4",Georgia,serif;font-size:28px;margin:0 0 10px}
+    h3{font-size:18px;margin:18px 0 8px}
+    ul{padding-left:18px;margin:8px 0}
+    .tight li{margin:6px 0}
+
+    .meta{color:var(--muted)}
+    .btn{display:inline-block;border:1px solid var(--line);padding:10px 14px;border-radius:10px;background:var(--card);text-decoration:none;color:inherit}
+    footer{color:var(--muted);font-size:13px;padding:24px 0;text-align:center}
   </style>
 </head>
 <body>
-  <h1>Gopinath Annadurai</h1>
-  <p>PhD Candidate, IIM Bangalore | Visiting PhD Fellow, UNU-WIDER</p>
+  <header class="top">
+    <div class="top-inner">
+      <div class="brand">Gopinath Annadurai</div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#bio">Bio</a>
+        <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#experience">Experience</a>
+        <a href="#activities">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#cv">CV</a>
+      </nav>
+      <div class="toggle" aria-label="Theme">
+        <span>Light</span>
+        <div class="seg" role="tablist" aria-label="Theme selector">
+          <button type="button" data-mode="light" aria-selected="false">Light</button>
+          <button type="button" data-mode="dark" aria-selected="false">Dark</button>
+          <button type="button" data-mode="auto" class="active" aria-selected="true">Auto</button>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <div class="section">
-    <h2>About</h2>
-    <p>I study caste, segregation, and intergenerational mobility using theory and data.</p>
-  </div>
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero" id="home" aria-labelledby="name">
+      <div>
+        <h1 id="name">Gopinath Annadurai</h1>
+        <div class="subtitle">Doctoral Candidate, Indian Institute of Management Bangalore — Public Policy</div>
+        <div class="subtitle">Primary fields: Political Economy, Ethnic Politics, Historical Sociology · Secondary: Education Policy, Policy Evaluation</div>
+        <p style="margin-top:8px">
+          <a class="btn" href="https://sites.google.com/view/gopinathannadurai" target="_blank" rel="noopener">Full CV / Website</a>
+        </p>
+      </div>
+      <!-- Optional headshot placeholder; replace src with your photo URL -->
+      <!-- <img class="headshot" src="headshot.jpg" alt="Portrait of Gopinath Annadurai" /> -->
+    </section>
 
-  <div class="section">
-    <h2>Publications</h2>
-    <ul>
-      <li><b>Improving First-Generation College Students' Outcomes</b> (NEUDC 2024) [<a href="#">Draft</a>]</li>
-      <li><b>India Lives in Her Hamlets</b> (Oxford 2025) [<a href="#">Manuscript</a>]</li>
-    </ul>
-  </div>
+    <!-- Bio -->
+    <section id="bio">
+      <h2>Bio.</h2>
+      <p>I study how spatially ranked ethnic structures shape access to opportunity, public goods, and well‑being. I combine formal theory with causal and descriptive empirical methods, drawing on administrative data, historical archives, and fieldwork. I am currently a Doctoral Candidate in the Public Policy area at the Indian Institute of Management Bangalore.</p>
+      <p class="meta">Email: <a href="mailto:gopinath.annadurai21@iimb.ac.in">gopinath.annadurai21@iimb.ac.in</a> · Phone: +91 99449 08930 · Web: <a href="https://sites.google.com/view/gopinathannadurai" target="_blank" rel="noopener">sites.google.com/view/gopinathannadurai</a></p>
+    </section>
 
-  <div class="section">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-    <p><a href="Gopinath-CV.pdf">Download CV</a></p>
-  </div>
+    <!-- Research -->
+    <section id="research">
+      <h2>Research</h2>
+      <h3>Published Papers</h3>
+      <ul class="tight">
+        <li>“A Micro‑ethnographic Study on Provision and Access of Public Goods in an Indian Village,” <a href="https://www.epw.in/journal/2021/37/commentary/micro-ethnographic-study-provision-and-access.html" target="_blank" rel="noopener">Economic and Political Weekly, Vol. 56(37), 2021</a>.</li>
+      </ul>
+
+      <h3>Working Papers</h3>
+      <ul class="tight">
+        <li>Discrimination and Mental Health: Caste Enclave Effects on Older Adults in Rural India — with <a href="https://www.iimb.ac.in/user/213/allen-p-ugargol" target="_blank" rel="noopener">Allen P Ugargol</a> and Parul Puri. <span class="meta">[Under Review]</span></li>
+        <li>Improving First‑Generation College Students' Education and Employment Outcomes: Effect of a Targeted Scholarship Program — with <a href="https://sites.google.com/site/sohamsahoo/" target="_blank" rel="noopener">Soham Sahoo</a>. <span class="meta">[</span><a href="https://ssrn.com/abstract=4873413" target="_blank" rel="noopener">IZA Working Paper</a><span class="meta">] [Under Review]</span></li>
+        <li>India Lives in Her Hamlets: Asymmetric Caste Segregation in Rural India — with <a href="https://www.iimb.ac.in/user/93/deepak-malghan" target="_blank" rel="noopener">Deepak Malghan</a>.</li>
+      </ul>
+
+      <h3>Ongoing Projects</h3>
+      <ul class="tight">
+        <li>Caste Segregation and Rural Public Goods in Tamil Nadu — with <a href="https://www.iimb.ac.in/user/93/deepak-malghan" target="_blank" rel="noopener">Deepak Malghan</a>.</li>
+      </ul>
+
+      <h3>Research Grants</h3>
+      <ul class="tight">
+        <li>Research Seed Grant (IIM Bangalore) for <em>Caste Segregation and Rural Public Goods in Tamil Nadu</em> — with <a href="https://www.iimb.ac.in/user/93/deepak-malghan" target="_blank" rel="noopener">Deepak Malghan</a>. Project page: <a href="https://www.iimb.ac.in/node/11126" target="_blank" rel="noopener">iimb.ac.in/node/11126</a>.</li>
+      </ul>
+    </section>
+
+    <!-- Teaching -->
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <h3>Teaching Assistant</h3>
+      <ul class="tight">
+        <li>Doing Business in Indian Infrastructure (DBII)</li>
+        <li>Business Governance and Society (BGS)</li>
+        <li>Quantitative Research Methodology</li>
+        <li>Political Science — Indian Politics and Public Policy</li>
+      </ul>
+    </section>
+
+    <!-- Experience / Services -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul class="tight">
+        <li>Academic Associate, Indian Institute of Management Indore — <span class="meta">Aug 2020 – May 2021</span></li>
+        <li>Research Assistant to <a href="https://www.iimb.ac.in/user/129/srinivasan-rangan" target="_blank" rel="noopener">Prof. Srinivasan Rangan</a>, IIM Bangalore — <span class="meta">Sep 2019 – Mar 2020</span></li>
+        <li>Research Intern, Rural Development Academy, Bangladesh — <span class="meta">Jan 2018 – Feb 2018</span></li>
+      </ul>
+
+      <h3 id="activities">Services</h3>
+      <p class="meta">Referee: Economic and Political Weekly</p>
+
+      <h3>Affiliations & Visiting Positions</h3>
+      <ul class="tight">
+        <li>United Nations University World Institute for Development Economics Research (UNU‑WIDER), Helsinki — Visiting PhD Fellow <span class="meta">(Sep – Nov 2025)</span></li>
+      </ul>
+    </section>
+
+    <!-- Conferences & Workshops (Professional Activities) -->
+    <section id="activities-list">
+      <h2>Professional Activities</h2>
+      <h3>Conference Presentations</h3>
+      <ul class="tight">
+        <li>121st American Political Science Association (APSA) Annual Meeting, Vancouver <em>*scheduled*</em> — 2025</li>
+        <li>The North East Universities Development Consortium (NEUDC), Northeastern University — 2024</li>
+        <li>Global Estimates of Opportunity and Mobility (LSE III), University of Bari — 2024</li>
+        <li>18th Annual Conference on Economic Growth and Development, ISI Delhi — 2023</li>
+        <li>Delhi Winter School, Delhi School of Economics — 2023</li>
+        <li>CESP Golden Jubilee Conference, JNU — 2023</li>
+        <li>Indian Public Policy Network Annual Conference, IIM Ahmedabad — 2022</li>
+        <li>Student Research Conclave on Behavioral Science, IIT Delhi — 2022</li>
+        <li>Indian Public Policy Network Annual Conference, ISB Mohali — 2021</li>
+        <li>20th Annual Conference of the Indian Association of Social Science Institutions (IASSI) — 2020</li>
+        <li>National Seminar on Sustainable Development & Social Justice, NIRD Hyderabad — 2019</li>
+      </ul>
+
+      <h3>Workshops Attended</h3>
+      <ul class="tight">
+        <li>Advanced Graduate Workshop — Azim Premji University & INET — 2024</li>
+        <li>Methods and Applications in Social Science Research — ISEC Bangalore — 2021</li>
+        <li>Advanced training workshop on Budget Analysis — IHRAR Chennai — 2019</li>
+      </ul>
+
+      <h3>Memberships</h3>
+      <ul class="tight">
+        <li>Indian Society of Labour Economics — 2024 – Present</li>
+        <li>The Econometric Society — 2023 – Present</li>
+        <li>Association for Public Policy Analysis and Management — 2023 – Present</li>
+      </ul>
+
+      <h3>Honors, Grants & Scholarships</h3>
+      <ul class="tight">
+        <li>L.K. Deshpande Young Labour Economist Award at the 64th ISLE Annual Conference — 2024</li>
+        <li>Doctoral Research Fellowships, Indian Institute of Management — 2021 – 2025</li>
+        <li>Qualified UGC National Eligibility Test in Public Administration — 2020</li>
+        <li>N.S. Ramaswamy Pre‑doctoral Fellowship, Indian Institute of Management — 2019 – 2020</li>
+        <li>Tamil Nadu Rural Students Talent Search Examination (TRUST) Scholarship — 2007 – 2008</li>
+      </ul>
+
+      <h3>Miscellaneous</h3>
+      <ul class="tight">
+        <li><strong>Programming</strong>: Stata, Python, LaTeX, QGIS</li>
+        <li><strong>Languages</strong>: English (proficient), Tamil (native), Hindi (basic)</li>
+        <li><strong>Nationality</strong>: Indian</li>
+        <li><strong>DOB</strong>: February 12, 1994</li>
+      </ul>
+    </section>
+
+    <!-- Committee -->
+    <section id="cv">
+      <h2>Dissertation Committee</h2>
+      <p><strong>Deepak Malghan (Co‑Chair)</strong> — Assistant Professor, Public Policy, IIM Bangalore — dmalghan@iimb.ac.in</p>
+      <p><strong>Soham Sahoo (Co‑Chair)</strong> — Assistant Professor, Economics, Loughborough University, UK — s.sahoo@lboro.ac.uk</p>
+      <p><strong>Suresh Bhagavatula</strong> — Professor, Entrepreneurship, IIM Bangalore — sureshbh@iimb.ac.in</p>
+      <p><a class="btn" href="https://sites.google.com/view/gopinathannadurai" target="_blank" rel="noopener">View full CV</a></p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:gopinath.annadurai21@iimb.ac.in">gopinath.annadurai21@iimb.ac.in</a></p>
+      <p>Phone: +91 99449 08930</p>
+      <p>Web: <a href="https://sites.google.com/view/gopinathannadurai" target="_blank" rel="noopener">sites.google.com/view/gopinathannadurai</a></p>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Gopinath Annadurai — Published with a single HTML file.
+    </footer>
+  </main>
+
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Theme toggle (Light / Dark / Auto)
+    const root = document.documentElement;
+    const seg = document.querySelector('.seg');
+    const buttons = seg.querySelectorAll('button');
+
+    function setMode(mode){
+      localStorage.setItem('theme-mode', mode);
+      buttons.forEach(b=>b.classList.toggle('active', b.dataset.mode===mode));
+      if(mode === 'auto'){ root.setAttribute('data-theme', 'auto'); }
+      else{ root.setAttribute('data-theme', mode); }
+    }
+
+    // Respect saved mode or default auto
+    const saved = localStorage.getItem('theme-mode') || 'auto';
+    setMode(saved);
+
+    buttons.forEach(btn=>btn.addEventListener('click', ()=> setMode(btn.dataset.mode)));
+  </script>
 </body>
 </html>
+
